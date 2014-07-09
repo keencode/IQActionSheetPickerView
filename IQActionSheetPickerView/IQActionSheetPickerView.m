@@ -7,6 +7,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation IQActionSheetPickerView
+
 @synthesize actionSheetPickerStyle = _actionSheetPickerStyle;
 @synthesize titlesForComponenets = _titlesForComponenets;
 @synthesize widthsForComponents = _widthsForComponents;
@@ -20,7 +21,7 @@
     self = [super init];
     if (self) {
         _actionToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-        _actionToolbar.barStyle = UIBarStyleBlackTranslucent;
+//        _actionToolbar.barStyle = UIBarStyleBlackTranslucent;
         [_actionToolbar sizeToFit];
         
         UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(pickerCancelClicked:)];
@@ -45,6 +46,8 @@
         [self setDateStyle:NSDateFormatterMediumStyle];
         
         [self setActionSheetPickerStyle:IQActionSheetPickerStyleTextPicker];
+        
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
